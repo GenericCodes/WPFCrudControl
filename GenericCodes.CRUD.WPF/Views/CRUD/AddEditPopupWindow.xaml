@@ -1,0 +1,35 @@
+﻿<Window x:Class="GenericCodes.CRUD.WPF.Views.CRUD.AddEditPopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" Width="Auto" Height="Auto">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0"
+                          Width="Auto" Height="Auto"
+                          Margin="10,5,0,0"
+                          Content="{Binding}"/>
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Right" Margin="0,5,30,10">
+            <Button  Margin="5,0"
+                     Command="{Binding SaveCommand}">
+                <TextBlock Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"
+                           Text="Save"
+                           VerticalAlignment="Center"
+                           Margin="5,0"
+                           Width="Auto"/>
+            </Button>
+            <Button  Margin="5,0"
+                     Command="{Binding ResetCommand}">
+                <TextBlock Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"
+                           Text="Reset" 
+                           VerticalAlignment="Center"
+                           Margin="5,0"  
+                           Width="Auto"/>
+            </Button>
+        </WrapPanel>
+    </Grid>
+</Window>

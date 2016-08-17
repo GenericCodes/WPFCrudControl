@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="GenericCodes.CRUD.WPF.Views.CRUD.GenericCrudControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:GenericCodes.CRUD.WPF.Converters"
+             xmlns:crud="clr-namespace:GenericCodes.CRUD.WPF.Views.CRUD"
+             xmlns:helpers="clr-namespace:GenericCodes.CRUD.WPF.Helpers"
+             xmlns:sys="clr-namespace:System.ComponentModel;assembly=System"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--SearchCriteriaContainer-->
+        <Grid x:Name="SearchPanel"
+              Grid.Row="0" 
+              DataContext="{Binding SearchCriteriaViewModel}"
+              Visibility="{Binding EnableSearch, Converter={converters:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0"
+                      Style="{Binding SearchGroupBoxStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+                <ContentControl Content="{Binding}"/>
+            </GroupBox>
+
+            <WrapPanel Grid.Row="1" 
+                       HorizontalAlignment="Right" 
+                       Margin="5,-50,5,0">
+                <Button Style="{Binding SearchButtonStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Command="{Binding SearchCmd}" />
+                <Button Style="{Binding ResetButtonStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Command="{Binding ResetCriteriaCmd}"/>
+            </WrapPanel>
+        </Grid>
+        <!-- Add & Delete Commands-->
+        <WrapPanel x:Name="OperationPanel"
+                   Grid.Row="1"
+                   HorizontalAlignment="Right"
+                   Margin="5,2,5,2">
+            <Button  Style="{Binding AddButtonStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Mode=TwoWay}"
+                    Command="{Binding AddEntityCmd}"
+                    Visibility="{Binding EnableAdd, Converter={converters:BoolToVisibilityConverter}, ElementName=GenericCRUD_UC}"/>
+            <Button Style="{Binding DeleteButtonStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Mode=TwoWay}"
+                    Command="{Binding DeleteEntityCmd}"
+                    Visibility="{Binding EnableDelete, Converter={converters:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+        </WrapPanel>
+        <!--Sorting-->
+        <StackPanel  x:Name="SortingPanel"
+                     Grid.Row="2" 
+                     DataContext="{Binding Sorting}" 
+                     Visibility="{Binding EnableSortingPaging, Converter={converters:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                     HorizontalAlignment="Left" 
+                     Orientation="Horizontal" 
+                     Margin="10,0,0,5" 
+                     Loaded="StackPanel_Loaded">
+            <Label Style="{Binding SortingByLabelStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+            <ComboBox x:Name="SortingByComboBox" Style="{Binding SortingByComboBoxStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" 
+                      ItemsSource="{Binding Path=SortingProperties}"
+                      DisplayMemberPath="DisplayName" 
+                      SelectedValuePath="PropertyPath" 
+                      SelectedValue="{Binding SortingPropertyValue}"/>
+            <Label Style="{Binding SortingTypeLabelStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+            <ComboBox Style="{Binding SortingTypeComboBoxStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                      DisplayMemberPath="DisplayName" 
+                      ItemsSource="{helpers:EnumToItemsSource {x:Type sys:ListSortDirection}}"
+                      SelectedValue="{Binding Path=SortDirectionValue,Mode=TwoWay}"
+                      SelectedValuePath="Value" />
+        </StackPanel>
+        <!--Listing-->
+        <DataGrid x:Name="DataGrid_CTRL"
+                  Grid.Row="3" 
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserResizeRows="False"
+                  CanUserResizeColumns="False"
+                  ItemsSource="{Binding DataList,ValidatesOnDataErrors=False,ValidatesOnExceptions=False,ValidatesOnNotifyDataErrors=False}"
+                  Style="{Binding DataGridStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}" 
+                  ColumnHeaderStyle="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=DataGridColumnHeaderStyle, Mode=TwoWay}"
+                  RowHeaderStyle="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=DataGridRowHeaderStyle, Mode=TwoWay}"
+                  RowStyle="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=DataGridRowStyle, Mode=TwoWay}"
+                  CellStyle="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=DataGridCellStyle, Mode=TwoWay}"
+                  Loaded="DataGrid_Loaded">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                      IsEnabled="{Binding IsSelectable,Mode=TwoWay}"
+                                      Style="{Binding IsSelectedCheckBoxStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Actions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button CommandParameter="{Binding}" 
+                                    Command="{Binding Path=DataContext.EditEntityCmd, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                    Style="{Binding EditButtonStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--Pager-->
+        <Grid Grid.Row="4"
+              DataContext="{Binding Pager}"  
+              Visibility="{Binding EnableSortingPaging, Converter={converters:BoolToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10,0,0,0">
+                <Label Style="{Binding PagerTotalRecordLabelStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+                <Label Style="{Binding PagerTotalRecordValueStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                       Content="{Binding TotalRecords}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal" >
+                <Button Grid.Column="3" 
+                        Style="{Binding PagerFirstPageBtnStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Command="{Binding FirstPageCommand}"/>
+                <Button Grid.Column="3"
+                        Style="{Binding PagerPreviousPageBtnStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Command="{Binding PrevPageCommand}"/>
+                <TextBox Name="currentPageTB"
+                         IsEnabled="False"
+                         Style="{Binding PagerCurrentPageTextBoxStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                         Text="{Binding CurrentPage, Mode=OneWay}"/>
+
+                <Button Grid.Column="3"
+                        Style="{Binding PagerNextPageBtnStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Command="{Binding NextPageCommand}"/>
+                <Button Grid.Column="3"
+                        Style="{Binding PagerLastPageBtnStyle,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Command="{Binding LastPageCommand}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Margin="0,0,10,0">
+                <Label Style="{Binding PagerPageSizeLabelStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+                <ComboBox Style="{Binding PagerPageSizeComboBoxStyle, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                          SelectedValuePath="Content"
+                          SelectedValue="{Binding PageSize}">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>50</ComboBoxItem>
+                    <ComboBoxItem>100</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

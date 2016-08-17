@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Northwind.Demo.Views.Suppliers.SuppliersAddEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="210" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                           Grid.Column="0"
+                           VerticalAlignment="Center" 
+                           Margin="5,0,16,4"
+                           Text="Company Name"/>
+        <TextBox Grid.Row="0" 
+                         Grid.Column="1"
+                         VerticalAlignment="Center"
+                         Margin="0,0,5,4"
+                         Text="{Binding Entity.CompanyName}"/>
+
+        <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Margin="5,0,16,4"
+                           Text="Contact Name"/>
+        <TextBox  Grid.Row="1"
+                           Grid.Column="1"
+                           VerticalAlignment="Center" 
+                           Margin="0,0,5,4"
+                           Text="{Binding Entity.ContactName}"/>
+
+        <TextBlock Grid.Row="2" 
+                           Grid.Column="0"  
+                           VerticalAlignment="Center" 
+                           Margin="5,0,16,4"
+                           Text="Contact Title"/>
+        <TextBox Grid.Row="2"
+                         Grid.Column="1" 
+                         MaxLength="8"
+                         VerticalAlignment="Center" 
+                         Margin="0,0,5,4"
+                         Text="{Binding Entity.ContactTitle}"/>
+
+        <TextBlock Grid.Row="3"
+                           Grid.Column="0" 
+                           VerticalAlignment="Center" 
+                           Margin="5,0,16,4"
+                           Text="Address"/>
+        <TextBox Grid.Row="3" 
+                         Grid.Column="1" 
+                         MaxLength="30"
+                         VerticalAlignment="Center"
+                         Margin="0,0,5,4"
+                         Text="{Binding Entity.Address}"/>
+
+        <TextBlock Grid.Row="4"
+                           Grid.Column="0" 
+                           VerticalAlignment="Center" 
+                           Margin="5,0,16,4"
+                           Text="City"/>
+        <TextBox Grid.Row="4"
+                         Grid.Column="1" 
+                         MaxLength="4"
+                         VerticalAlignment="Center" 
+                         Margin="0,0,5,4"
+                         Text="{Binding Entity.City}"/>
+
+        <TextBlock Grid.Row="5" 
+                           Grid.Column="0" 
+                           VerticalAlignment="Top" 
+                           Margin="5,5,16,4"
+                           Text="Region"/>
+        <TextBox Grid.Row="5" 
+                         Grid.Column="1"
+                         VerticalAlignment="Center" 
+                         Margin="0,0,5,4"
+                         MaxLength="100"
+                         Text="{Binding Entity.Region}"/>
+
+        <TextBlock Grid.Row="6" 
+                           Grid.Column="0" 
+                           VerticalAlignment="Top" 
+                           Margin="5,5,16,4"
+                           Text="Country"/>
+        <TextBox Grid.Row="6" 
+                         Grid.Column="1"
+                         VerticalAlignment="Center" 
+                         Margin="0,0,5,4"
+                         MaxLength="100"
+                         Text="{Binding Entity.Country}"/>
+
+        <TextBlock Grid.Row="7" 
+                           Grid.Column="0" 
+                           VerticalAlignment="Top" 
+                           Margin="5,5,16,4"
+                           Text="Phone"/>
+        <TextBox Grid.Row="7" 
+                         Grid.Column="1"
+                         VerticalAlignment="Center" 
+                         Margin="0,0,5,4"
+                         MaxLength="100"
+                         Text="{Binding Entity.Phone}"/>
+    </Grid>
+</UserControl>

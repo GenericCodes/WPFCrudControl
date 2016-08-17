@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:supplierViewModels="clr-namespace:Northwind.Demo.ViewModel.Suppliers"
+                    xmlns:supplierViews="clr-namespace:Northwind.Demo.Views.Suppliers">
+    
+    <DataTemplate DataType="{x:Type supplierViewModels:SuppliersSearchViewModel}">
+        <supplierViews:SuppliersSearch/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type supplierViewModels:SuppliersAddEditViewModel}">
+        <supplierViews:SuppliersAddEdit/>
+    </DataTemplate>
+
+</ResourceDictionary>

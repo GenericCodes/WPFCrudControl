@@ -1,0 +1,147 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:views="clr-namespace:GenericCodes.CRUD.WPF.Views.CRUD">
+
+    <Style x:Key="DefaultPopupWindowStyle" TargetType="{x:Type views:AddEditPopupWindow}" BasedOn="{StaticResource {x:Type Window}}" >
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="MaxWidth" Value="1200"/>
+        <Setter Property="MaxHeight" Value="800"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+        <Setter Property="ShowInTaskbar" Value="False"/>
+    </Style>
+
+    <Style x:Key="CRUDDeleteButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="5,0,5,0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Delete"/>
+        <Setter Property="Content" Value="Delete"/>
+    </Style>
+    <Style x:Key="CRUDAddButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="5,0,5,0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Add"/>
+        <Setter Property="Content" Value="Add"/>
+    </Style>
+    <Style x:Key="CRUDEditButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Edit"/>
+        <Setter Property="Content" Value="Edit"/>
+    </Style>
+    <Style x:Key="CRUDIsSelectedCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="CRUDSearchButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Search"/>
+        <Setter Property="Content" Value="Search"/>
+    </Style>
+    <Style x:Key="CRUDResetButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Reset"/>
+        <Setter Property="Content" Value="Reset"/>
+    </Style>
+    <Style x:Key="PagerFirstPageButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="0,2,2,2"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="First Page"/>
+        <Setter Property="Content" Value="First"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="PagerPreviousPageButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="2,2,5,2"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Previous page"/>
+        <Setter Property="Content" Value="Prev"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="PagerNextPageButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="5,2,2,2"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Next page"/>
+        <Setter Property="Content" Value="Next"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="PagerLastPageButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="2,2,0,2"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Last page"/>
+        <Setter Property="Content" Value="Last"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="PagerCurrentPageTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="PagerTotalRecordLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0,0,5,0"/>
+        <Setter Property="Content" Value="Total Records:"/>
+    </Style>
+
+    <Style x:Key="PagerTotalRecordValueStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="PagerPageSizeLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0,0,5,0"/>
+        <Setter Property="Content" Value="Page Size"/>
+    </Style>
+    <Style x:Key="PagerPageSizeComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="52"/>
+        <Setter Property="FontSize" Value="11"/>
+    </Style>
+
+    <Style x:Key="SortingByComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Width" Value="130"/>
+    </Style>
+    <Style x:Key="SortingTypeComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Width" Value="130"/>
+    </Style>
+    <Style x:Key="SortingByLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,5,0"/>
+        <Setter Property="Content" Value="Sort By"/>
+    </Style>
+    <Style x:Key="SortingTypeLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="10,0,5,0"/>
+        <Setter Property="Content" Value="Sort Typ"/>
+    </Style>
+    <Style x:Key="CRUDSearchGroupBoxStyle" TargetType="{x:Type GroupBox}" BasedOn="{StaticResource {x:Type GroupBox}}">
+        <Setter Property="Header" Value="Search"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="100"/>
+    </Style>
+
+    <Style x:Key="CRUDDataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="CanUserDeleteRows" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="CanUserResizeColumns" Value="False"/>
+    </Style>
+    <Style x:Key="CRUDDataGridColumnHeader"  TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style x:Key="CRUDDataGridRowHeader"  TargetType="{x:Type DataGridRowHeader}" BasedOn="{StaticResource {x:Type DataGridRowHeader}}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Width" Value="0"/>
+    </Style>
+    <Style x:Key="CRUDDataGridRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource {x:Type DataGridRow}}">
+    </Style>
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell }" BasedOn="{StaticResource {x:Type DataGridCell}}">
+    </Style>
+</ResourceDictionary>

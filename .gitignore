@@ -39,6 +39,24 @@ $RECYCLE.BIN/
 .Trashes
 .VolumeIcon.icns
 
+# Exclude specific Directories
+/.vs
+/GenericCodes.Core/bin
+/GenericCodes.Core/obj
+/GenericCodes.CRUD.WPF/bin
+/GenericCodes.CRUD.WPF/obj
+/GenericCodes.Resources/bin
+/GenericCodes.Resources/obj
+/Northwind.DAL/bin
+/Northwind.DAL/obj
+/Northwind.Demo/bin
+/Northwind.Demo/obj
+/Northwind.Service/bin
+/Northwind.Service/obj
+/packages
+/GenericCodes.CRUDWPFNuGet.Packager/bin
+/GenericCodes.CRUDWPFNuGet.Packager/obj
+
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop

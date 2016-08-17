@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WPFCRUDControl</id>
+    <version>1.0.0</version>
+    <title>WPF CrudControl</title>
+    <authors>AbduElrahman Emad, Muhammed Magdy</authors>
+    <owners>GenericCodes</owners>
+    <description>
+      A generic WPF CrudControl implemented based on the MVVM pattern. The control abstracts both the UI and business logic to achieve a foundation for a complete CRUD operation implementation (Add, Edit, Delete, Listing with sorting, paging and searching).
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      This package help you to develop a fully CRUD lookup module with (Add, Edit, Delete, Listing with sorting, paging and searching) that based on MVVM pattern with minimum code.
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/GenericCodes/WPFCrudControl</projectUrl>
+    <iconUrl>http://genericcodes.com/CRUD_Icon64x64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <copyright>Copyright  2016 - GenericCodes</copyright>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.1.1" />
+    </dependencies>
+    <references>
+      <reference file="GenericCodes.Core.dll" />
+      <reference file="GenericCodes.CRUD.WPF.dll" />
+    </references>
+    <tags>CRUD crud CrudControl GenericControl generic Crud control crudPattern CRUDPattern</tags>
+  </metadata>
+  <files>
+    <file src="lib\" target="lib" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>

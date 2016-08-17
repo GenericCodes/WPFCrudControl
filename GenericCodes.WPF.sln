@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.DAL", "Northwind.DAL\Northwind.DAL.csproj", "{57F00670-6029-4C34-8165-FB030A5CA0A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Service", "Northwind.Service\Northwind.Service.csproj", "{7876486F-7C89-4F78-997D-06DDF075479A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCodes.CRUD.WPF", "GenericCodes.CRUD.WPF\GenericCodes.CRUD.WPF.csproj", "{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Demo", "Northwind.Demo\Northwind.Demo.csproj", "{079496FF-6F2E-42DD-B45D-9549394A0235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCodes.Resources", "GenericCodes.Resources\GenericCodes.Resources.csproj", "{D0D5B22F-2772-4237-9351-D3FB50990528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCodes.Core", "GenericCodes.Core\GenericCodes.Core.csproj", "{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCodes.CRUDWPFNuGet.Packager", "GenericCodes.CRUDWPFNuGet.Packager\GenericCodes.CRUDWPFNuGet.Packager.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57F00670-6029-4C34-8165-FB030A5CA0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F00670-6029-4C34-8165-FB030A5CA0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F00670-6029-4C34-8165-FB030A5CA0A5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{57F00670-6029-4C34-8165-FB030A5CA0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F00670-6029-4C34-8165-FB030A5CA0A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F00670-6029-4C34-8165-FB030A5CA0A5}.Release|x86.ActiveCfg = Release|Any CPU
+		{7876486F-7C89-4F78-997D-06DDF075479A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7876486F-7C89-4F78-997D-06DDF075479A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7876486F-7C89-4F78-997D-06DDF075479A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7876486F-7C89-4F78-997D-06DDF075479A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7876486F-7C89-4F78-997D-06DDF075479A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7876486F-7C89-4F78-997D-06DDF075479A}.Release|x86.ActiveCfg = Release|Any CPU
+		{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9F093F8-6FE8-4AE8-8D5F-C2961B24738C}.Release|x86.ActiveCfg = Release|Any CPU
+		{079496FF-6F2E-42DD-B45D-9549394A0235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079496FF-6F2E-42DD-B45D-9549394A0235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079496FF-6F2E-42DD-B45D-9549394A0235}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{079496FF-6F2E-42DD-B45D-9549394A0235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079496FF-6F2E-42DD-B45D-9549394A0235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079496FF-6F2E-42DD-B45D-9549394A0235}.Release|x86.ActiveCfg = Release|Any CPU
+		{D0D5B22F-2772-4237-9351-D3FB50990528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D5B22F-2772-4237-9351-D3FB50990528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D5B22F-2772-4237-9351-D3FB50990528}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0D5B22F-2772-4237-9351-D3FB50990528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D5B22F-2772-4237-9351-D3FB50990528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D5B22F-2772-4237-9351-D3FB50990528}.Release|x86.ActiveCfg = Release|Any CPU
+		{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B2FFF1-5840-431A-B473-C35AFE8CD73F}.Release|x86.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|x86.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|x86.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://genericcodes.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GenericCodes.Core\\GenericCodes.Core.csproj
+		SccProjectName1 = GenericCodes.Core
+		SccLocalPath1 = GenericCodes.Core
+		SccProjectUniqueName2 = GenericCodes.CRUD.WPF\\GenericCodes.CRUD.WPF.csproj
+		SccProjectName2 = GenericCodes.CRUD.WPF
+		SccLocalPath2 = GenericCodes.CRUD.WPF
+		SccProjectUniqueName3 = GenericCodes.CRUDWPFNuGet.Packager\\GenericCodes.CRUDWPFNuGet.Packager.csproj
+		SccProjectName3 = GenericCodes.CRUDWPFNuGet.Packager
+		SccLocalPath3 = GenericCodes.CRUDWPFNuGet.Packager
+		SccProjectUniqueName4 = GenericCodes.Resources\\GenericCodes.Resources.csproj
+		SccProjectName4 = GenericCodes.Resources
+		SccLocalPath4 = GenericCodes.Resources
+		SccProjectUniqueName5 = Northwind.DAL\\Northwind.DAL.csproj
+		SccProjectName5 = Northwind.DAL
+		SccLocalPath5 = Northwind.DAL
+		SccProjectUniqueName6 = Northwind.Demo\\Northwind.Demo.csproj
+		SccProjectName6 = Northwind.Demo
+		SccLocalPath6 = Northwind.Demo
+		SccProjectUniqueName7 = Northwind.Service\\Northwind.Service.csproj
+		SccProjectName7 = Northwind.Service
+		SccLocalPath7 = Northwind.Service
+	EndGlobalSection
+EndGlobal
