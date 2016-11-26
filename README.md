@@ -55,3 +55,4 @@ For the solution design details got to the <a href="https://www.codeproject.com/
 &lt;/crud:GenericCRUDControl&gt;</pre>
 
 <h2>The Result</h2>
+![result](https://cloud.githubusercontent.com/assets/20560529/20644314/ec3c0a98-b438-11e6-9fad-3d7f4b1747d7.png)
