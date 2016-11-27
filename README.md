@@ -4,7 +4,7 @@ A generic WPF CrudControl implemented based on the MVVM pattern. The control abs
 <h2>The Result</h2>
 ![result](https://cloud.githubusercontent.com/assets/20560529/20644314/ec3c0a98-b438-11e6-9fad-3d7f4b1747d7.png)
 
-##Xamal usage
+<h3>Xaml usage</h3>
 
 <pre lang="xml">
 &lt;crud:GenericCRUDControl&gt;
@@ -46,7 +46,7 @@ For the getting-started details got to the <a href="https://www.codeproject.com/
 
 ![generic crud](https://cloud.githubusercontent.com/assets/20560529/20644254/3665bb8e-b437-11e6-90e9-4ecbb0565e5f.png)
 For the solution design details got to the <a href="https://www.codeproject.com/Articles/1042837/Generic-WPF-CRUD-Control-Solution-Design">CodeProject Article</a>
-<h3>Northwind Demo</h3>
+<h2>Northwind Demo</h2>
 
 <p>The solution is applied on <code>Northwind</code> database for two modules <code>Suppliers</code> and <code>Products</code>. In the demo, we used Unity as a IoC/DI container, MVVMLight toolkit and WPF Modern UI library for styling the main window and navigation.</p>
 
