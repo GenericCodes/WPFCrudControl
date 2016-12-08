@@ -25,7 +25,6 @@ using Northwind.Demo.ViewModel.Products;
 using Northwind.Demo.ViewModel.Suppliers;
 using Northwind.Service;
 using Northwind.Service.Interfaces;
-using PerThreadLifetimeManager = Northwind.Demo.Library.PerThreadLifetimeManager;
 namespace Northwind.Demo.ViewModel
 {
     /// <summary>
@@ -45,7 +44,7 @@ namespace Northwind.Demo.ViewModel
             #region register DataContext & UnitOfWork
             Database.SetInitializer<NorthwindContext>(new System.Data.Entity.NullDatabaseInitializer<NorthwindContext>());
 
-            container.RegisterType<ApplicationDbContext, NorthwindContext>(new PerThreadLifetimeManager());
+            container.RegisterType<ApplicationDbContext, NorthwindContext>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
 
             #endregion
@@ -57,14 +56,14 @@ namespace Northwind.Demo.ViewModel
             #endregion
 
             #region Register App Services
-            container.RegisterType<IDialogService, DialogService>(); 
+            container.RegisterType<IDialogService, DialogService>();
             #endregion
 
 
             #region Register Business Services
             container.RegisterType<ISuppliersService, SuppliersService>();
             container.RegisterType<IProductService, ProductService>();
-            //container.RegisterType<IService<Category>, Service<Category>>();
+            container.RegisterType<ICategoryService, CategoryService>();
             #endregion
 
             #region Register ViewModels
@@ -99,7 +98,7 @@ namespace Northwind.Demo.ViewModel
             }
         }
 
-        public SuppliersViewModel  Suppliers
+        public SuppliersViewModel Suppliers
         {
             get
             {

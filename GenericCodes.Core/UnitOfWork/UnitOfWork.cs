@@ -17,12 +17,10 @@ namespace GenericCodes.Core.UnitOfWork
         private bool _disposed;
         private ObjectContext _objectContext;
         private DbTransaction _transaction;
-        private Dictionary<string, dynamic> _repositories;
 
         public UnitOfWork(ApplicationDbContext dataContext)
         {
             _dataContext = dataContext;
-            _repositories = new Dictionary<string, dynamic>();
         }
 
         public bool IsDisposed
@@ -78,10 +76,6 @@ namespace GenericCodes.Core.UnitOfWork
 
         public IRepository<TEntity> Repository<TEntity>() where TEntity : Entity
         {
-            if (ServiceLocator.IsLocationProviderSet)
-            {
-                return ServiceLocator.Current.GetInstance<IRepository<TEntity>>();
-            }
             return new Repository<TEntity>(_dataContext);
         }
 

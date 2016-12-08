@@ -9,8 +9,6 @@
                 <ResourceDictionary Source="/Skins/MainSkin.xaml"/>
                 <ResourceDictionary Source="/Resources/SuppliersTemplates.xaml"/>
                 <ResourceDictionary Source="/Resources/ProductTemplates.xaml"/>
-                
-                
             </ResourceDictionary.MergedDictionaries>
 
             <!--Global View Model Locator-->

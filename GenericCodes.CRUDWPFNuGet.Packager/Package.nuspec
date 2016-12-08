@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>WPFCRUDControl</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>WPF CrudControl</title>
     <authors>AbduElrahman Emad, Muhammed Magdy</authors>
     <owners>GenericCodes</owners>
@@ -10,6 +10,7 @@
       A generic WPF CrudControl implemented based on the MVVM pattern. The control abstracts both the UI and business logic to achieve a foundation for a complete CRUD operation implementation (Add, Edit, Delete, Listing with sorting, paging and searching).
     </description>
     <releaseNotes>
+      Fixing bugs, Target framework 4.5 or later
     </releaseNotes>
     <summary>
       This package help you to develop a fully CRUD lookup module with (Add, Edit, Delete, Listing with sorting, paging and searching) that based on MVVM pattern with minimum code.
@@ -26,6 +27,7 @@
     <references>
       <reference file="GenericCodes.Core.dll" />
       <reference file="GenericCodes.CRUD.WPF.dll" />
+      <reference file="GenericCodes.Resources.dll" />
     </references>
     <tags>CRUD crud CrudControl GenericControl generic Crud control crudPattern CRUDPattern</tags>
   </metadata>

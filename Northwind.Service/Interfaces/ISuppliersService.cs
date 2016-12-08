@@ -7,5 +7,6 @@ namespace Northwind.Service.Interfaces
     public interface ISuppliersService : IService<Supplier>
     {
         void UpdateCanSelect(List<Supplier> entities);
+        List<Supplier> GetALL();
     }
 }

@@ -16,12 +16,12 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace GenericCodes.CRUD.WPF.ViewModel.CRUDBases
 {
-    public abstract class GenericCrudBase<T> : ObservableObject where T : Entity, new() 
+    public abstract class GenericCrudBase<T> : ObservableObject where T : Entity, new()
     {
         private readonly IDialogService _dialogService;
 
         #region Constructor
-       
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GenericCRUDBase"/> class.
         /// </summary>
@@ -32,9 +32,9 @@ namespace GenericCodes.CRUD.WPF.ViewModel.CRUDBases
             _dialogService = ServiceLocator.Current.GetInstance<IDialogService>();
 
             SearchCriteriaViewModel = searchCriteriaViewModel;
-            
+
             AddEditEntityViewModel = addEditEntityViewModel;
-            
+
             Pager = new Pager();
             Pager.PageChanged += LoadData;
 
@@ -121,20 +121,20 @@ namespace GenericCodes.CRUD.WPF.ViewModel.CRUDBases
         /// <summary>
         /// Represent delegate that will be called when error raised <see cref="Action{Exception}"/>
         /// </summary>
-        protected event Action<Exception> ErrorRaised;
+        public event Action<Exception> ErrorRaised;
 
         /// <summary>
         /// Represent delegate that will be called after Retrieving Data <see cref="Action{List{T}}"/>
         /// </summary>
-        protected Action<List<T>> PostDataRetrievalDelegate;
+        public Action<List<T>> PostDataRetrievalDelegate;
         /// <summary>
         /// Represent delegate that will be called before add or edit entity <see cref="Action{PopupTypeEnum}"/>
         /// </summary>
-        protected Action<PopupTypeEnum> PreAddEditDelegate { get; set; }
+        public Action<PopupTypeEnum> PreAddEditDelegate { get; set; }
         /// <summary>
         /// Represent delegate that will be called after add or edit entity <see cref="Action{PopupTypeEnum}"/>
         /// </summary>
-        protected Action<PopupTypeEnum> PostAddEditDelegate { get; set; }
+        public Action<PopupTypeEnum> PostAddEditDelegate { get; set; }
 
         #endregion
 
@@ -241,9 +241,12 @@ namespace GenericCodes.CRUD.WPF.ViewModel.CRUDBases
             {
                 entity.BeginEdit();
                 AddEditEntityViewModel.PopupType = PopupTypeEnum.Edit;
-                AddEditEntityViewModel.Entity = entity;
+
                 if (PreAddEditDelegate != null)
                     PreAddEditDelegate(AddEditEntityViewModel.PopupType);
+
+                AddEditEntityViewModel.Entity = entity;
+
                 entity.Validate();
                 _dialogService.ShowAddEditWindow(PopupTypeEnum.Edit, AddEditEntityViewModel, PopupWindowStyleName);
                 if (AddEditEntityViewModel.IsSavedSuccessfully)
@@ -351,7 +354,7 @@ namespace GenericCodes.CRUD.WPF.ViewModel.CRUDBases
             var list = query.ToList();
 
             return list;
-        } 
+        }
         #endregion
 
         #region Helpers

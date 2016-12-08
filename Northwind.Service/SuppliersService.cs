@@ -18,14 +18,21 @@ namespace Northwind.Service
         {
 
         }
-
+        public List<Supplier> GetALL()
+        {
+            using (var unitOfWork = ServiceLocator.Current.GetInstance<IUnitOfWork>())
+            {
+                var suppliers = unitOfWork.Repository<Supplier>().List().ToList();
+                return suppliers;
+            }
+        }
         public void UpdateCanSelect(List<Supplier> entities)
         {
             bool isUsed;
             using (var unitOfWork = ServiceLocator.Current.GetInstance<IUnitOfWork>())
             {
                 var productRepo = unitOfWork.Repository<Product>();
-                List<int> usedIds = productRepo.List(p=>p.SupplierID.HasValue).Select(p => p.SupplierID.Value).ToList();
+                List<int> usedIds = productRepo.List(p => p.SupplierID.HasValue).Select(p => p.SupplierID.Value).ToList();
                 entities.ForEach(t =>
                 {
                     isUsed = usedIds.Contains(t.SupplierID);

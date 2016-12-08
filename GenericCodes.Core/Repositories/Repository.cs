@@ -38,26 +38,33 @@ namespace GenericCodes.Core.Repositories
 
         public void Insert(TEntity entity)
         {
-            _dbContext.Set<TEntity>().Add(entity);
+            Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Added;
         }
 
         public void InsertRange(IEnumerable<TEntity> entities)
         {
-            _dbContext.Set<TEntity>().AddRange(entities);
+            foreach (var entity in entities)
+            {
+                Insert(entity);
+            }
         }
 
         public void Update(TEntity entity)
         {
+            Attach(entity);
             _dbContext.Entry(entity).State = EntityState.Modified;
         }
 
         public void Delete(TEntity entity)
         {
-           var dbset= _dbContext.Set<TEntity>();
-           var entry = _dbContext.Entry(entity);
-           if (entry.State == EntityState.Detached)
-               dbset.Attach(entity);
-           dbset.Remove(entity);
+            var dbset = _dbContext.Set<TEntity>();
+            var entry = _dbContext.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                Attach(entity);
+            }
+            dbset.Remove(entity);
         }
 
         public void Delete(object id)
@@ -71,6 +78,12 @@ namespace GenericCodes.Core.Repositories
             return _dbContext.Set<TEntity>();
         }
 
-      
+        private void Attach(TEntity entity)
+        {
+            if (_dbContext.Entry(entity).State == EntityState.Detached)
+            {
+                _dbContext.Set<TEntity>().Attach(entity);
+            }
+        }
     }
 }

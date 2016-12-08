@@ -81,14 +81,6 @@
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="GenericCodes.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WPFCRUDControl.1.0.0\lib\GenericCodes.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="GenericCodes.CRUD.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WPFCRUDControl.1.0.0\lib\GenericCodes.CRUD.WPF.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -129,7 +121,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Library\PerThreadLifetimeManager.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Products\ProductAddEditViewModel.cs" />
     <Compile Include="ViewModel\Products\ProductsSearchViewModel.cs" />
@@ -223,7 +214,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -237,6 +230,14 @@
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GenericCodes.Core\GenericCodes.Core.csproj">
+      <Project>{a9b2fff1-5840-431a-b473-c35afe8cd73f}</Project>
+      <Name>GenericCodes.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericCodes.CRUD.WPF\GenericCodes.CRUD.WPF.csproj">
+      <Project>{e9f093f8-6fe8-4ae8-8d5f-c2961b24738c}</Project>
+      <Name>GenericCodes.CRUD.WPF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Northwind.DAL\Northwind.DAL.csproj">
       <Project>{57F00670-6029-4C34-8165-FB030A5CA0A5}</Project>
       <Name>Northwind.DAL</Name>
@@ -248,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helper\" />
+    <Folder Include="Library\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Northwind.mdf">

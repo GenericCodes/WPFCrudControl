@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="lib\GenericCodes.Core.dll" />
     <Content Include="lib\GenericCodes.CRUD.WPF.dll" />
+    <Content Include="lib\GenericCodes.Resources.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

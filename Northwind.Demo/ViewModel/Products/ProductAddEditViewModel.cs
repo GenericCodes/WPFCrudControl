@@ -8,15 +8,16 @@ using GenericCodes.Core.Services;
 using GenericCodes.CRUD.WPF.ViewModel.CRUDBases;
 using Northwind.DAL.Models;
 using Northwind.Service.Interfaces;
+using Microsoft.Practices.ServiceLocation;
+using GenericCodes.Core.UnitOfWork;
 
 namespace Northwind.Demo.ViewModel.Products
 {
     public class ProductAddEditViewModel : AddEditEntityBase<Product>
     {
-        public ProductAddEditViewModel(IRepository<Category> categoryRepo, ISuppliersService suppliersService)
+        public ProductAddEditViewModel()
         {
-            Categories = categoryRepo.Queryable().ToList();
-            Suppliers = suppliersService.Queryable().ToList();
+
         }
 
         private List<Category> _categories;
