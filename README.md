@@ -2,7 +2,7 @@
 A generic WPF CrudControl implemented based on the MVVM pattern. The control abstracts both the UI and business logic to achieve a foundation for a complete CRUD operation implementation (Add, Edit, Delete, Listing with sorting, paging and searching).
 
 <h2>The Result</h2>
-![generic crud](https://cloud.githubusercontent.com/assets/20560529/20644314/ec3c0a98-b438-11e6-9fad-3d7f4b1747d7.png)
+![alt text](https://cloud.githubusercontent.com/assets/20560529/20644314/ec3c0a98-b438-11e6-9fad-3d7f4b1747d7.png)
 
 <h3>Xaml usage</h3>
 
